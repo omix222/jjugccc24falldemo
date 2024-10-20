@@ -32,7 +32,11 @@ http://localhost:9080/openapi/ui/
 | **Webhooks**                  | 非公式のサポート                   | 正式サポート                       |
 | **URL エンコーディング**      | 暗黙の動作                         | より明確な制御が可能               |
 
-http://localhost:9080/jjug-demoapp/api/hello
+http://localhost:9080/jjugdemo/api/hello
+
+http://localhost:9080/jjugdemo/api/metric/timed
+
+http://localhost:9080/jjugdemo/api/metric/increment
 
 http://localhost:9080/metrics/  
 
