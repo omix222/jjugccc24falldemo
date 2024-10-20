@@ -35,6 +35,7 @@ http://localhost:9080/openapi/ui/
 http://localhost:9080/jjugdemo/api/hello
 
 http://localhost:9080/jjugdemo/api/metric/timed
+ロジックの実行時間をバラバラに実行する処理。
 
 http://localhost:9080/jjugdemo/api/metric/increment
 これでメトリクスが増える.MetricController.java
@@ -45,3 +46,13 @@ http://localhost:9080/metrics/
 > # HELP com_example_jjugdemo_metric_MetricController_endpoint_counter_total  
 > # TYPE com_example_jjugdemo_metric_MetricController_endpoint_counter_total counter
 > com_example_jjugdemo_metric_MetricController_endpoint_counter_total{mp_scope="application",} 15.0
+
+処理時間のメトリクスはここで確認できる
+
+> # TYPE http_server_request_duration_seconds_max gauge
+> http_server_request_duration_seconds_max{error_type="",http_request_method="GET",http_response_status_code="200",http_route="/jjugdemo/api/hello",mp_scope="vendor",network_protocol_name="HTTP",network_protocol_version="1.1",server_address="localhost",server_port="9080",url_scheme="http",} 0.020718083
+> http_server_request_duration_seconds_max{error_type="",http_request_method="GET",http_response_status_code="200",http_route="/jjugdemo/api/metric/timed",mp_scope="vendor",network_protocol_name="HTTP",network_protocol_version="1.1",server_address="localhost",server_port="9080",url_scheme="http",} 0.993685708
+> http_server_request_duration_seconds_max{error_type="",http_request_method="GET",http_response_status_code="200",http_route="/openapi/ui/",mp_scope="vendor",network_protocol_name="HTTP",network_protocol_version="1.1",server_address="localhost",server_port="9080",url_scheme="http",} 0.0
+> http_server_request_duration_seconds_max{error_type="",http_request_method="GET",http_response_status_code="404",http_route="/jjug-demoapp/api/metric/timed",mp_scope="vendor",network_protocol_name="HTTP",network_protocol_version="1.1",server_address="localhost",server_port="9080",url_scheme="http",} 0.0
+> http_server_request_duration_seconds_max{error_type="",http_request_method="GET",http_response_status_code="200",http_route="/jjugdemo/api/metric/increment",mp_scope="vendor",network_protocol_name="HTTP",network_protocol_version="1.1",server_address="localhost",server_port="9080",url_scheme="http",} 0.043827042
+> http_server_request_duration_seconds_max{error_type="",http_request_method="GET",http_response_status_code="404",http_route="/jjugdemoapp/api/metric/timed",mp_scope="vendor",network_protocol_name="HTTP",network_protocol_version="1.1",server_address="localhost",server_port="9080",url_scheme="http",} 0.0
