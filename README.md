@@ -37,6 +37,11 @@ http://localhost:9080/jjugdemo/api/hello
 http://localhost:9080/jjugdemo/api/metric/timed
 
 http://localhost:9080/jjugdemo/api/metric/increment
+これでメトリクスが増える.MetricController.java
 
 http://localhost:9080/metrics/  
-
+増えたやつはここで確認できる
+例：
+> # HELP com_example_jjugdemo_metric_MetricController_endpoint_counter_total  
+> # TYPE com_example_jjugdemo_metric_MetricController_endpoint_counter_total counter
+> com_example_jjugdemo_metric_MetricController_endpoint_counter_total{mp_scope="application",} 15.0
