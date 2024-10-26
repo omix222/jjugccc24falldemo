@@ -3,7 +3,7 @@
 https://microprofile.io/compatible/7-0/#overview
 を見ると、MicroProfile 7.0 は Open Libertyしか対応していないため、Open Libertyを使う。
 
-# Build
+# Build & Run
 
 sdk use java 21-open  
 
