@@ -1,12 +1,27 @@
+# JJUG 用　デモアプリ
+
+https://microprofile.io/compatible/7-0/#overview
+を見ると、MicroProfile 7.0 は Open Libertyしか対応していないため、Open Libertyを使う。
+
 # Build
 
 sdk use java 21-open  
 
 ./mvnw liberty:dev
 
-http://localhost:9080/jjug-demoapp/api/hello
+http://localhost:9081/jjugdemo/api/hello
 
-# Open Liberty 24.0.0.9-beta 用
+http://localhost:9081/openapi/ui/
+
+http://localhost:9081/jjugdemo/api/metric/timed
+ロジックの実行時間をバラバラに実行する処理。
+
+http://localhost:9081/jjugdemo/api/metric/increment
+これでメトリクスが増える.MetricController.java
+
+http://localhost:9081/metrics/  
+
+# Open Liberty 24.0.0.9-beta パッケージ版 用
 
 sdk use java 21-open  
 
@@ -20,6 +35,8 @@ cp target/jjugdemo.war /opt/openliberty/24.0.0.9-beta/wlp/usr/servers/Server01/d
 http://localhost:9080/openapi/ui/
 
 - 参考
+
+https://www.openapis.org/blog/2021/02/16/migrating-from-openapi-3-0-to-3-1-0
 
 | 特徴                          | v3.0                               | v3.1                               |
 | ----------------------------- | ---------------------------------- | ---------------------------------- |

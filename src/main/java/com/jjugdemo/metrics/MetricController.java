@@ -16,7 +16,7 @@ import java.util.Random;
 @ApplicationScoped //Required for @Gauge
 public class MetricController {
 
-    @Inject
+    @Inject 
     @Metric(name = "endpoint_counter")
 
     private Counter counter;
