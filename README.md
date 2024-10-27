@@ -13,6 +13,10 @@ http://localhost:9081/jjugdemo/api/hello
 
 http://localhost:9081/openapi/ui/
 
+- nullabe   : 3.0 ではnullableプロパティがあったが、3.1では["type", "null"]で対応するようになった
+http://localhost:9081/openapi/
+
+
 http://localhost:9081/jjugdemo/api/metric/timed
 ロジックの実行時間をバラバラに実行する処理。
 
