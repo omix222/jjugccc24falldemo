@@ -1,12 +1,14 @@
 package com.example.jjugdemo.openapi;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
-
+/**
+ * 予約情報を表すクラス.
+ */
 @Schema(name="Booking")
 public class Booking {
     @Schema(required = true, description = "Booking id")
     private String id;
-    @Schema(required = true, description = "Description of the destination")
+    @Schema(required = true, description = "Description of the destination",nullable = true)
     private Destination destination;
 
     public String getId() {
@@ -16,7 +18,6 @@ public class Booking {
     public void setId(String id) {
         this.id = id;
     }
-
     public Destination getDestination() {
         return destination;
     }
